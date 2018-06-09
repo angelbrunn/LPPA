@@ -13,6 +13,14 @@ namespace MotoPoint
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["dbEstado"] = 2;
+
+
+            if (User.IsInRole("Usuario"))
+            {
+
+                Response.Redirect("home.aspx");
+            }
+
         }
         /// <summary>
         /// REDIRECCIONO HACIA EL HOME PAGE

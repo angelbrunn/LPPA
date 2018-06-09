@@ -11,21 +11,23 @@ namespace MotoPoint
         /// Instancio la clase de arquitectura base | MultiUsuario
         /// </summary>
         BLL.SIS.BUSINESS.INegMultiUsuario interfazNegocioUsuario = new BLL.SIS.BUSINESS.NegMultiUsuario();
-
-        FormsAuthenticationTicket authTicket;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnLogin_Click(object sender, EventArgs e)
-        {
-            Session["Usuario"] = txtUsuario.Text;
-            Session["Contraseña"] = txtContrasenia.Text;
-            
+        {           
             //VALIDAR LOGIN | + INTENTOS
-           
             var resultadoLogin = 0;
             BE.SIS.ENTIDAD.Usuario user = new BE.SIS.ENTIDAD.Usuario();
 
@@ -57,21 +59,39 @@ namespace MotoPoint
                     nVisibilidad = g.grupo;
                 }
 
+                // CREO UN TICKET DE AUTENTIFICACION Y LO ENCRYPTO: ARQ.BASE.WEBSEGURITY
+                FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
+                1, // Ticket version
+                user.usuario, // Username associated with ticket
+                DateTime.Now, // Date/time issued
+                DateTime.Now.AddMinutes(30), // Date/time to expire
+                true, // "true" for a persistent user cookie
+                nVisibilidad, // User-data, in this case the roles
+                FormsAuthentication.FormsCookiePath);// Path cookie valid for
+
+                // Encrypt the cookie using the machine key for secure transport
+                string hash = FormsAuthentication.Encrypt(ticket);
+                HttpCookie loginCookie = new HttpCookie(
+                FormsAuthentication.FormsCookieName, // Name of auth cookie
+                hash); // Hashed ticket
+
+                // Set the cookie's expiration time to the tickets expiration time
+                if (ticket.IsPersistent) loginCookie.Expires = ticket.Expiration;
+
+                // Add the cookie to the list for outgoing response
+                Response.Cookies.Add(loginCookie);
+
+
                 if (nVisibilidad == "Admin")
                 {
                     //SI USUARIO ADMIN -> PANTALLA ADMIN
-                    FormsAuthentication.SetAuthCookie(user.usuario, false);
-                    Response.Redirect("admin.aspx",false);
+                    Session["loginEstado"] = 0;
+                    Response.Redirect("admin.aspx");
                 }
                 else
                 {
                     //SI USUARIO ES JERARQUICO O USUARIO -> PANTALLA HOME
-                    /*
-                    authTicket = new FormsAuthenticationTicket(1, usuario.usuario, DateTime.Now, DateTime.Now.AddMinutes(20), false, nVisibilidad);
-                    string encryptedTicket = FormsAuthentication.Encrypt(authTicket);
-                    var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
-                    HttpContext.Response.Cookies.Add(authCookie);
-                    */
+                    Session["loginEstado"] = 0;
                     Response.Redirect("home.aspx");
                 }
             }
@@ -82,18 +102,6 @@ namespace MotoPoint
                 FormsAuthentication.SignOut();
                 Response.Redirect("login.aspx");
             }
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }

@@ -16,4 +16,3 @@ C:\Users\angel\Documents\wks_microsoft\LPPA\MotoPoint\BE\obj\Debug\BE.vbproj.Cor
 C:\Users\angel\Documents\wks_microsoft\LPPA\MotoPoint\BE\obj\Debug\BE.dll
 C:\Users\angel\Documents\wks_microsoft\LPPA\MotoPoint\BE\obj\Debug\BE.xml
 C:\Users\angel\Documents\wks_microsoft\LPPA\MotoPoint\BE\obj\Debug\BE.pdb
-C:\Users\angel\Documents\wks_microsoft\LPPA\MotoPoint\BE\obj\Debug\BE.vbprojResolveAssemblyReference.cache
