@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.Security;
 
 namespace MotoPoint
 {
@@ -30,6 +31,12 @@ namespace MotoPoint
         protected void LinkGestionPerfiles_Click(object sender, EventArgs e)
         {
             Response.Redirect("adminGestionPerfiles.aspx");
+        }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            FormsAuthentication.SignOut();
+            Response.Redirect("login.aspx");
         }
     }
 }

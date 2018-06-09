@@ -22,17 +22,17 @@ namespace MotoPoint
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-
+            // Se desencadena al comienzo de cada solicitud
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
         {
-
+            // Se desencadena al intentar autenticar el uso
         }
 
         protected void Application_Error(object sender, EventArgs e)
         {
-
+            // Se desencadena cuando se produce un error    
         }
 
         protected void Session_End(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace MotoPoint
 
         protected void Application_End(object sender, EventArgs e)
         {
-
+            // Se desencadena cuando finaliza la aplicación
         }
     }
 }

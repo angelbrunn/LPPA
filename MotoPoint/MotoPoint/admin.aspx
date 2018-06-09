@@ -57,7 +57,7 @@
         <asp:Button class="btn warning" ID="btnTbitacora" Text="Test Bitacora" runat="server"/>
         <asp:Button class="btn warning" ID="btnTidioma" Text="Cambiar Idioma" runat="server"/>
         <asp:Button class="btn info" ID="btnTinfo" Text="Info" runat="server"/>
-        <asp:Button class="btn danger" ID="btnSalir" Text="Salir" runat="server"/>
+        <asp:Button class="btn danger" ID="btnSalir" Text="Salir" runat="server" OnClick="btnSalir_Click"/>
     </div>
     </form>
 </body>

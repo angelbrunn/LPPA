@@ -17,3 +17,4 @@ C:\Users\angel\Documents\wks_microsoft\LPPA\MotoPoint\EL\obj\Debug\EL.vbproj.Cor
 C:\Users\angel\Documents\wks_microsoft\LPPA\MotoPoint\EL\obj\Debug\EL.dll
 C:\Users\angel\Documents\wks_microsoft\LPPA\MotoPoint\EL\obj\Debug\EL.xml
 C:\Users\angel\Documents\wks_microsoft\LPPA\MotoPoint\EL\obj\Debug\EL.pdb
+C:\Users\angel\Documents\wks_microsoft\LPPA\MotoPoint\EL\obj\Debug\EL.vbprojResolveAssemblyReference.cache

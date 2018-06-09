@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using System.Web.Security;
 
 namespace MotoPoint
@@ -24,11 +25,7 @@ namespace MotoPoint
             Session["Contraseña"] = txtContrasenia.Text;
             
             //VALIDAR LOGIN | + INTENTOS
-
-            //REDIREC SEGUN ROL
-            //Response.Redirect("Respuesta_EjercicioVarSession.aspx");
-
-            
+           
             var resultadoLogin = 0;
             BE.SIS.ENTIDAD.Usuario user = new BE.SIS.ENTIDAD.Usuario();
 
@@ -63,13 +60,8 @@ namespace MotoPoint
                 if (nVisibilidad == "Admin")
                 {
                     //SI USUARIO ADMIN -> PANTALLA ADMIN
-                    /*
-                    authTicket = new FormsAuthenticationTicket(1, usuario.usuario, DateTime.Now, DateTime.Now.AddMinutes(20), false, nVisibilidad);
-                    string encryptedTicket = FormsAuthentication.Encrypt(authTicket);
-                    var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
-                    HttpContext.Response.Cookies.Add(authCookie);
-                    */
-                    Response.Redirect("Admin.aspx");
+                    FormsAuthentication.SetAuthCookie(user.usuario, false);
+                    Response.Redirect("admin.aspx",false);
                 }
                 else
                 {
@@ -88,6 +80,7 @@ namespace MotoPoint
                 //MOSTRAR PANTALLA LOGIN | AVISAR USER INVALIDO
                 Session["loginEstado"] = 1;
                 FormsAuthentication.SignOut();
+                Response.Redirect("login.aspx");
             }
 
 
