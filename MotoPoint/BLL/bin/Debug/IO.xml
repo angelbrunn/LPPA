@@ -1,0 +1,261 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+IO
+</name>
+</assembly>
+<members>
+<member name="T:IO.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:IO.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:IO.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:IO.SIS.IO.Hash">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.Hash.generarSHA(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="sCadena"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.Hash.obtenerHash(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="cadena"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.Hash.obtenerHashUsuario(BE.SIS.ENTIDAD.Usuario)">
+ <summary>
+ 
+ </summary>
+ <param name="oUsuario"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.Hash.verificarConsistenciaBD">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.Hash.calcularHashTablaUsuario(System.Collections.Generic.List{BE.SIS.ENTIDAD.Usuario})">
+ <summary>
+ 
+ </summary>
+ <param name="listaUsuarios"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:IO.SIS.IO.IHash">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.IHash.generarSHA(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="sCadena"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.IHash.obtenerHash(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="cadena"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.IHash.obtenerHashUsuario(BE.SIS.ENTIDAD.Usuario)">
+ <summary>
+ 
+ </summary>
+ <param name="oUsuario"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.IHash.verificarConsistenciaBD">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.IHash.calcularHashTablaUsuario(System.Collections.Generic.List{BE.SIS.ENTIDAD.Usuario})">
+ <summary>
+ 
+ </summary>
+ <param name="listaUsuario"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:IO.SIS.ESCRITURA.IOBackup">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBackup.leerArchivoUsuario(System.String,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="ruta"></param>
+ <param name="delim"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBackup.leerArchivoBitacora(System.String,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="ruta"></param>
+ <param name="delim"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBackup.leerArchivoGrupo(System.String,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="ruta"></param>
+ <param name="delim"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBackup.leerArchivoGrupoPermiso(System.String,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="ruta"></param>
+ <param name="delim"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBackup.leerArchivoPermiso(System.String,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="ruta"></param>
+ <param name="delim"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBackup.leerArchivoUsuarioGrupo(System.String,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="ruta"></param>
+ <param name="delim"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBackup.leerArchivoMultiIdioma(System.String,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="ruta"></param>
+ <param name="delim"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBackup.escribirArchivoUsuario(System.String,System.String,System.Collections.Generic.List{BE.SIS.ENTIDAD.Usuario})">
+ <summary>
+ 
+ </summary>
+ <param name="ruta"></param>
+ <param name="delim"></param>
+ <param name="listaUsuario"></param>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBackup.escribirArchivoBitacora(System.String,System.String,System.Collections.Generic.List{BE.SIS.ENTIDAD.Bitacora})">
+ <summary>
+ 
+ </summary>
+ <param name="ruta"></param>
+ <param name="delim"></param>
+ <param name="listaEventos"></param>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBackup.escribirArchivoUsuarioGrupo(System.String,System.String,System.Collections.Generic.List{BE.SIS.ENTIDAD.UsuarioGrupo})">
+ <summary>
+ 
+ </summary>
+ <param name="ruta"></param>
+ <param name="delim"></param>
+ <param name="listaUsuarioGrupo"></param>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBackup.escribirArchivoGrupo(System.String,System.String,System.Collections.Generic.List{BE.SIS.ENTIDAD.Grupo})">
+ <summary>
+ 
+ </summary>
+ <param name="ruta"></param>
+ <param name="delim"></param>
+ <param name="listaGrupo"></param>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBackup.escribirArchivoGrupoPermiso(System.String,System.String,System.Collections.Generic.List{BE.SIS.ENTIDAD.GrupoPermiso})">
+ <summary>
+ 
+ </summary>
+ <param name="ruta"></param>
+ <param name="delim"></param>
+ <param name="listaGrupoPermiso"></param>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBackup.escribirArchivoPermiso(System.String,System.String,System.Collections.Generic.List{BE.SIS.ENTIDAD.Permiso})">
+ <summary>
+ 
+ </summary>
+ <param name="ruta"></param>
+ <param name="delim"></param>
+ <param name="listaPermiso"></param>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBackup.escribirArchivoMultiIdioma(System.String,System.String,System.Collections.Generic.List{BE.SIS.ENTIDAD.MultiIdioma})">
+ <summary>
+ 
+ </summary>
+ <param name="ruta"></param>
+ <param name="delim"></param>
+ <param name="listaPermiso"></param>
+ <remarks></remarks>
+</member>
+<member name="T:IO.SIS.ESCRITURA.IOBitacora">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBitacora.registrarEnBitacoraIO(BE.SIS.ENTIDAD.Bitacora)">
+ <summary>
+ 
+ </summary>
+ <param name="oBitacora"></param>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

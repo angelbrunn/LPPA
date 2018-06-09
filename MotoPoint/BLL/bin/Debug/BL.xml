@@ -1,0 +1,93 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+BL
+</name>
+</assembly>
+<members>
+<member name="T:BL.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:BL.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:BL.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:BL.SIS.BIT.Bitacora">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:BL.SIS.BIT.Bitacora.obtenerUltimoId">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BL.SIS.BIT.Bitacora.registrarEnBitacora_BKP(System.String,EL.SIS.EXCEPCIONES.BKPException)">
+ <summary>
+ 
+ </summary>
+ <param name="usuarioI"></param>
+ <param name="oBKPExc"></param>
+ <remarks></remarks>
+</member>
+<member name="M:BL.SIS.BIT.Bitacora.registrarEnBitacora_BLL(System.String,EL.SIS.EXCEPCIONES.BLLExcepcion)">
+ <summary>
+ 
+ </summary>
+ <param name="usuarioI"></param>
+ <param name="oBLLExc"></param>
+ <remarks></remarks>
+</member>
+<member name="M:BL.SIS.BIT.Bitacora.registrarEnBitacora_DAL(System.String,EL.SIS.EXCEPCIONES.DALExcepcion)">
+ <summary>
+ 
+ </summary>
+ <param name="usuarioI"></param>
+ <param name="oDALExc"></param>
+ <remarks></remarks>
+</member>
+<member name="M:BL.SIS.BIT.Bitacora.registrarEnBitacora_IO(System.String,EL.SIS.EXCEPCIONES.IOException)">
+ <summary>
+ 
+ </summary>
+ <param name="usuarioI"></param>
+ <param name="oIOExc"></param>
+ <remarks></remarks>
+</member>
+<member name="M:BL.SIS.BIT.Bitacora.registrarEnBitacora_SEG(System.String,EL.SIS.EXCEPCIONES.SEGExcepcion)">
+ <summary>
+ 
+ </summary>
+ <param name="usuarioI"></param>
+ <param name="oSEGExc"></param>
+ <remarks></remarks>
+</member>
+<member name="M:BL.SIS.BIT.Bitacora.registrarEnBitacora_UI(System.String,EL.SIS.EXCEPCIONES.UIExcepcion)">
+ <summary>
+ 
+ </summary>
+ <param name="usuarioI"></param>
+ <param name="oUIExc"></param>
+</member>
+<member name="M:BL.SIS.BIT.Bitacora.obtenerEventos">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

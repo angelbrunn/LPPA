@@ -1,0 +1,316 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DAL
+</name>
+</assembly>
+<members>
+<member name="T:DAL.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:DAL.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:DAL.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:DAL.SIS.DATOS.DALAuditoria">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:DAL.SIS.DATOS.DALAuditoria.primeraConexion">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DAL.SIS.DATOS.DALBitacora">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALBitacora.registrarEnBitacoraBD(BE.SIS.ENTIDAD.Bitacora)">
+ <summary>
+ 
+ </summary>
+ <param name="oBitacora"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALBitacora.obtenerEventos">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALBitacora.insertarBitacoraDesdeBackup(System.Collections.Generic.List{BE.SIS.ENTIDAD.Bitacora})">
+ <summary>
+ 
+ </summary>
+ <param name="listaEventos"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALBitacora.insertarGrupoDesdeBackup(System.Collections.Generic.List{BE.SIS.ENTIDAD.Grupo})">
+ <summary>
+ 
+ </summary>
+ <param name="listaGrupo"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALBitacora.insertarGrupoPermisoDesdeBackup(System.Collections.Generic.List{BE.SIS.ENTIDAD.GrupoPermiso})">
+ <summary>
+ 
+ </summary>
+ <param name="listaGrupoPermiso"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALBitacora.insertarPermisoDesdeBackup(System.Collections.Generic.List{BE.SIS.ENTIDAD.Permiso})">
+ <summary>
+ 
+ </summary>
+ <param name="listaPermiso"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALBitacora.insertarMultiIdiomaDesdeBackup(System.Collections.Generic.List{BE.SIS.ENTIDAD.MultiIdioma})">
+ <summary>
+ 
+ </summary>
+ <param name="listaMultiIdioma"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALBitacora.insertarUsuarioGrupoDesdeBackup(System.Collections.Generic.List{BE.SIS.ENTIDAD.UsuarioGrupo})">
+ <summary>
+ 
+ </summary>
+ <param name="listaUsuarioGrupo"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALBitacora.insertarUsuarioDesdeBackup(System.Collections.Generic.List{BE.SIS.ENTIDAD.Usuario})">
+ <summary>
+ 
+ </summary>
+ <param name="listaUsuarios"></param>
+ <remarks></remarks>
+</member>
+<member name="T:DAL.SIS.DATOS.DALGrupo">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALGrupo.obtenerGrupos">
+ <summary>
+ ###ADO DESCONECTADO###
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALGrupo.obtenerGrupoPorId(System.Int32)">
+ <summary>
+ 
+ </summary>
+ <param name="idGrupo"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALGrupo.obtenerDescripcionGrupoPorNombreGrupo(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="nombreGrupo"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALGrupo.obtenerGrupoPorNombreGrupo(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="nombreGrupo"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DAL.SIS.DATOS.DALGrupoPermiso">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALGrupoPermiso.obtenerPermisosPorIdGrupo(System.Int32)">
+ <summary>
+ 
+ </summary>
+ <param name="idGrupo"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALGrupoPermiso.obtenerGrupoPermiso">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DAL.SIS.DATOS.DALMultiIdioma">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALMultiIdioma.obtenerTablaMultiIdioma(System.String)">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALMultiIdioma.obtenerTablaMultiIdiomaAll">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALMultiIdioma.idiomasDisponibles">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DAL.SIS.DATOS.DALPermiso">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALPermiso.obtenerPermisoPorId(System.Int32)">
+ <summary>
+ ###ADO DESCONECTADO###
+ </summary>
+ <param name="idPermiso"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALPermiso.obtenerPermiso">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DAL.SIS.DATOS.DALUsuario">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALUsuario.obtenerUltimoId">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALUsuario.obtenerLegajoUsuario(System.Int32)">
+ <summary>
+ 
+ </summary>
+ <param name="idUsuario"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALUsuario.obtenerUsuarioPorId(System.Int32)">
+ <summary>
+ 
+ </summary>
+ <param name="idUsuario"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALUsuario.obtenerUsuarioPorLegajo(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="legajo"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALUsuario.validarUsuario(System.String,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="usuario"></param>
+ <param name="password"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALUsuario.obtenerTablaUsuario">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALUsuario.validarExistenciaUsuario(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="usuario"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALUsuario.insertarUsuario(System.Collections.Generic.List{BE.SIS.ENTIDAD.Usuario})">
+ <summary>
+ 
+ </summary>
+ <param name="listaUsuarios"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALUsuario.insertarUsuarioDesdeBackup(System.Collections.Generic.List{BE.SIS.ENTIDAD.Usuario})">
+ <summary>
+ 
+ </summary>
+ <param name="listadoUsuarios"></param>
+ <remarks></remarks>
+</member>
+<member name="T:DAL.SIS.DATOS.DALUsuarioGrupo">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALUsuarioGrupo.obtenerGrupoPorIdUsuario(System.Int32)">
+ <summary>
+ 
+ </summary>
+ <param name="idUsuario"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALUsuarioGrupo.insertarUsuarioGrupo(BE.SIS.ENTIDAD.UsuarioGrupo)">
+ <summary>
+ 
+ </summary>
+ <param name="oUsuarioGrupo"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALUsuarioGrupo.obtenerTablaUsuarioGrupo">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+EL
+</name>
+</assembly>
+<members>
+<member name="T:EL.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:EL.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:EL.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:EL.SIS.EXCEPCIONES.BKPException">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:EL.SIS.EXCEPCIONES.BKPException.#ctor(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="mensaje"></param>
+ <remarks></remarks>
+</member>
+<member name="M:EL.SIS.EXCEPCIONES.BKPException.#ctor(System.String,System.Exception)">
+ <summary>
+ 
+ </summary>
+ <param name="mensaje"></param>
+ <param name="inner"></param>
+ <remarks></remarks>
+</member>
+<member name="M:EL.SIS.EXCEPCIONES.BLLExcepcion.#ctor(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="mensaje"></param>
+ <remarks></remarks>
+</member>
+<member name="M:EL.SIS.EXCEPCIONES.BLLExcepcion.#ctor(System.String,System.Exception)">
+ <summary>
+ 
+ </summary>
+ <param name="mensaje"></param>
+ <param name="inner"></param>
+ <remarks></remarks>
+</member>
+<member name="T:EL.SIS.EXCEPCIONES.DALExcepcion">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:EL.SIS.EXCEPCIONES.DALExcepcion.#ctor(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="mensaje"></param>
+ <remarks></remarks>
+</member>
+<member name="M:EL.SIS.EXCEPCIONES.DALExcepcion.#ctor(System.String,System.Exception)">
+ <summary>
+ 
+ </summary>
+ <param name="mensaje"></param>
+ <param name="inner"></param>
+ <remarks></remarks>
+</member>
+<member name="T:EL.SIS.EXCEPCIONES.IOException">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:EL.SIS.EXCEPCIONES.IOException.#ctor(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="mensaje"></param>
+ <remarks></remarks>
+</member>
+<member name="M:EL.SIS.EXCEPCIONES.IOException.#ctor(System.String,System.Exception)">
+ <summary>
+ 
+ </summary>
+ <param name="mensaje"></param>
+ <param name="inner"></param>
+ <remarks></remarks>
+</member>
+<member name="T:EL.SIS.EXCEPCIONES.SEGExcepcion">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:EL.SIS.EXCEPCIONES.SEGExcepcion.#ctor(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="mensaje"></param>
+ <remarks></remarks>
+</member>
+<member name="M:EL.SIS.EXCEPCIONES.SEGExcepcion.#ctor(System.String,System.Exception)">
+ <summary>
+ 
+ </summary>
+ <param name="mensaje"></param>
+ <param name="inner"></param>
+ <remarks></remarks>
+</member>
+<member name="M:EL.SIS.EXCEPCIONES.UIExcepcion.#ctor(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="mensaje"></param>
+ <remarks></remarks>
+</member>
+<member name="M:EL.SIS.EXCEPCIONES.UIExcepcion.#ctor(System.String,System.Exception)">
+ <summary>
+ 
+ </summary>
+ <param name="mensaje"></param>
+ <param name="inner"></param>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

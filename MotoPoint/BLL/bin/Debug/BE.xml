@@ -1,0 +1,370 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+BE
+</name>
+</assembly>
+<members>
+<member name="T:BE.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:BE.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:BE.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:BE.SIS.ENTIDAD.Bitacora">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:BE.SIS.ENTIDAD.Bitacora.#ctor">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Bitacora.idEventoField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.Bitacora.idEvento">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Bitacora.idUsuarioField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Bitacora.fechaField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.Bitacora.fecha">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Bitacora.descripcionField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.Bitacora.descripcion">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:BE.SIS.ENTIDAD.Grupo">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Grupo.idGrupoField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.Grupo.idGrupo">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Grupo.grupoField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.Grupo.grupo">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Grupo.descripcionField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Grupo.listadoPermisosField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:BE.SIS.ENTIDAD.GrupoPermiso">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.GrupoPermiso.idGrupoField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.GrupoPermiso.idGrupo">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.GrupoPermiso.idPermisoField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.GrupoPermiso.idPermiso">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:BE.SIS.ENTIDAD.MultiIdioma">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.MultiIdioma.componenteField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.MultiIdioma.componente">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.MultiIdioma.iKeyField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.MultiIdioma.iKey">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.MultiIdioma.ValueField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.MultiIdioma.value">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:BE.SIS.ENTIDAD.Permiso">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Permiso.idPermisoField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.Permiso.idPermiso">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Permiso.descripcionField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.Permiso.descripcion">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:BE.SIS.ENTIDAD.Usuario">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Usuario.idUsuarioField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.Usuario.idUsuario">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Usuario.usuarioField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.Usuario.usuario">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Usuario.passwordField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.Usuario.password">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Usuario.legajoField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Usuario.idiomaField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.Usuario.idioma">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Usuario.digitoVerificadorField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.Usuario.listadoGruposField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.Usuario.listadoGrupos">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:BE.SIS.ENTIDAD.UsuarioGrupo">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.UsuarioGrupo.idUsuarioField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.UsuarioGrupo.idUsuario">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:BE.SIS.ENTIDAD.UsuarioGrupo.idGrupoField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BE.SIS.ENTIDAD.UsuarioGrupo.idGrupo">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>
