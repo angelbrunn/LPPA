@@ -13,17 +13,17 @@
     <form id="fromAdministrador" name="fromAdministrador" runat="server">
     <div id="dbEstado">
       <p>
-        <asp:Label ID="lblDbEstado" Text="DB - DIGITO VERIFICADOR" value="1" runat="server"></asp:Label>
+        <asp:Label ID="lblDbEstado" Text="DB - DIGITO VERIFICADOR - OK" value="1" runat="server"></asp:Label>
       </p>
     </div>
 
-    <div>
-    <p><asp:LinkButton ID="LinkGestionPerfiles" runat="server" OnClick="LinkGestionPerfiles_Click">Gestion Perfiles</asp:LinkButton></p>
-    <p><asp:LinkButton ID="LinkHome" runat="server" OnClick="LinkHome_Click">Ir a MotoPoint!</asp:LinkButton></p>
+    <div id="abmUser">
+    <p>Administracion de Usuarios - ABM Perfiles - <asp:LinkButton ID="LinkGestionPerfiles" runat="server" OnClick="LinkGestionPerfiles_Click">Gestion Perfiles</asp:LinkButton></p>
+    <p>Ir a la WebSite MotoPoint! - <asp:LinkButton ID="LinkHome" runat="server" OnClick="LinkHome_Click">Ir a MotoPoint!</asp:LinkButton></p>
     </div>
     <br />
     <div>
-    <asp:Table ID="tbBitacora" runat="server" Height="102px" Width="622px">
+    <asp:Table ID="tbBitacora" runat="server" Height="102px" Width="100%">
     <asp:TableRow>
         <asp:TableCell>idEvento</asp:TableCell>
         <asp:TableCell>idUsuario</asp:TableCell>
