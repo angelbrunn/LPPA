@@ -48,6 +48,9 @@ namespace MotoPoint
                 //GUARDO EL USUARIO CONECTADO EN SESSION
                 Session["Usuario"] = usuario.usuario;
                 Session["UsuarioId"] = usuario.idUsuario;
+                Session["UsuarioLoginFecha"] = DateTime.Now;
+                Session["UsuarioHost"] = Request.UserHostAddress;
+                Session["UsuarioAgent"] = Request.Browser.Browser + "-" + Request.Browser.Version;
                 //ME GUARDO LOS GRUPOS PARA EL USUARIO LOGEADO
                 List<BE.SIS.ENTIDAD.Grupo> lstGrupos = usuario.listadoGrupos;
                 //NIVEL DE ACCESO DEL USUARIO LOGEADO

@@ -78,6 +78,7 @@
     <Content Include="admin.aspx" />
     <Content Include="AdminGestionPerfiles.aspx" />
     <Content Include="Content\css\admin.css" />
+    <Content Include="Content\css\home.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
