@@ -18,7 +18,17 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //ARQ.BASE: GESTION LOGIN/LOGOUT - VALIDACION DE ESTADO DE LOGIN
+            var loginEstado = Session["loginEstado"];
+            if (loginEstado == null)
+            {
+                Session["loginEstado"] = 0;
+            } else if (loginEstado.ToString() == "0") {
+                Session["loginEstado"] = 0;
+            } else if (loginEstado.ToString() == "1")
+            {
+                Session["loginEstado"] = 1;
+            }
         }
         /// <summary>
         /// 
@@ -26,8 +36,7 @@ namespace MotoPoint
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void btnLogin_Click(object sender, EventArgs e)
-        {           
-            //VALIDAR LOGIN | + INTENTOS
+        {
             var resultadoLogin = 0;
             BE.SIS.ENTIDAD.Usuario user = new BE.SIS.ENTIDAD.Usuario();
 
