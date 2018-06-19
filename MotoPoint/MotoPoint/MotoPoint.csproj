@@ -76,7 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin.aspx" />
-    <Content Include="AdminGestionPerfiles.aspx" />
+    <Content Include="adminGestionPerfiles.aspx" />
     <Content Include="Content\css\admin.css" />
     <Content Include="Content\css\home.css" />
     <Content Include="Content\css\login.css" />
@@ -94,12 +94,12 @@
     <Compile Include="admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminGestionPerfiles.aspx.cs">
-      <DependentUpon>AdminGestionPerfiles.aspx</DependentUpon>
+    <Compile Include="adminGestionPerfiles.aspx.cs">
+      <DependentUpon>adminGestionPerfiles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminGestionPerfiles.aspx.designer.cs">
-      <DependentUpon>AdminGestionPerfiles.aspx</DependentUpon>
+    <Compile Include="adminGestionPerfiles.aspx.designer.cs">
+      <DependentUpon>adminGestionPerfiles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
