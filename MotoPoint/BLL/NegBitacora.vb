@@ -12,6 +12,16 @@ Namespace SIS.BUSINESS
         ''' <summary>
         ''' 
         ''' </summary>
+        ''' <remarks></remarks>
+        Dim interfazHash As IO.SIS.IO.IHash = New IO.SIS.IO.Hash
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <remarks></remarks>
+        Dim interfazIOBitacora As IO.SIS.ESCRITURA.IOBitacora = New IO.SIS.ESCRITURA.IOBitacora
+        ''' <summary>
+        ''' 
+        ''' </summary>
         ''' <param name="usuarioId"></param>
         ''' <param name="oBKP"></param>
         ''' <remarks></remarks>
@@ -80,6 +90,35 @@ Namespace SIS.BUSINESS
             listadoEventos = oBITBitacora.obtenerEventos
 
             Return listadoEventos
+        End Function
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Function verificarConsistenciaBD() As Boolean Implements INegBitacora.verificarConsistenciaBD
+            Dim estado As Boolean
+            Dim IdDB As String = "DB"
+            Try
+                estado = interfazHash.verificarConsistenciaBitacoraBD()
+            Catch ex As EL.SIS.EXCEPCIONES.SEGExcepcion
+                registrarEnBitacora_SEG(IdDB, ex)
+            End Try
+            Return estado
+        End Function
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <returns></returns>
+        Function obtenerLogSystem() As DataTable Implements INegBitacora.obtenerLogSystem
+            Dim dt As DataTable
+            Dim IdFile As String = "Error en lectura de log_System"
+            Try
+                dt = interfazIOBitacora.leerLogSystem()
+            Catch ex As EL.SIS.EXCEPCIONES.SEGExcepcion
+                registrarEnBitacora_SEG(IdFile, ex)
+            End Try
+            Return dt
         End Function
     End Class
 End Namespace

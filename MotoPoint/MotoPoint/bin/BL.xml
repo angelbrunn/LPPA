@@ -28,6 +28,17 @@ BL
  </summary>
  <remarks></remarks>
 </member>
+<member name="F:BL.SIS.BIT.Bitacora.interfazHash">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:BL.SIS.BIT.Bitacora.interfazIOBitacora">
+ <summary>
+ 
+ </summary>
+</member>
 <member name="M:BL.SIS.BIT.Bitacora.obtenerUltimoId">
  <summary>
  
@@ -83,6 +94,13 @@ BL
  <param name="oUIExc"></param>
 </member>
 <member name="M:BL.SIS.BIT.Bitacora.obtenerEventos">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BL.SIS.BIT.Bitacora.obtenerLogSystem">
  <summary>
  
  </summary>

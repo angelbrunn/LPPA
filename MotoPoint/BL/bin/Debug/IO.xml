@@ -28,6 +28,11 @@ IO
  </summary>
  <remarks></remarks>
 </member>
+<member name="F:IO.SIS.IO.Hash.interfazIOBitacora">
+ <summary>
+ 
+ </summary>
+</member>
 <member name="M:IO.SIS.IO.Hash.generarSHA(System.String)">
  <summary>
  
@@ -52,12 +57,26 @@ IO
  <returns></returns>
  <remarks></remarks>
 </member>
-<member name="M:IO.SIS.IO.Hash.verificarConsistenciaBD">
+<member name="M:IO.SIS.IO.Hash.verificarConsistenciaUsuarioBD">
  <summary>
  
  </summary>
  <returns></returns>
  <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.Hash.verificarConsistenciaBitacoraBD">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.Hash.obtenerHashBitacora(BE.SIS.ENTIDAD.Bitacora)">
+ <summary>
+ 
+ </summary>
+ <param name="oUsuario"></param>
+ <returns></returns>
 </member>
 <member name="M:IO.SIS.IO.Hash.calcularHashTablaUsuario(System.Collections.Generic.List{BE.SIS.ENTIDAD.Usuario})">
  <summary>
@@ -66,6 +85,12 @@ IO
  <param name="listaUsuarios"></param>
  <returns></returns>
  <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.Hash.calcularHashTablaBitacora">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
 </member>
 <member name="T:IO.SIS.IO.IHash">
  <summary>
@@ -97,7 +122,22 @@ IO
  <returns></returns>
  <remarks></remarks>
 </member>
-<member name="M:IO.SIS.IO.IHash.verificarConsistenciaBD">
+<member name="M:IO.SIS.IO.IHash.obtenerHashBitacora(BE.SIS.ENTIDAD.Bitacora)">
+ <summary>
+ 
+ </summary>
+ <param name="oBitacora"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.IHash.verificarConsistenciaUsuarioBD">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.IHash.verificarConsistenciaBitacoraBD">
  <summary>
  
  </summary>
@@ -111,6 +151,12 @@ IO
  <param name="listaUsuario"></param>
  <returns></returns>
  <remarks></remarks>
+</member>
+<member name="M:IO.SIS.IO.IHash.calcularHashTablaBitacora">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
 </member>
 <member name="T:IO.SIS.ESCRITURA.IOBackup">
  <summary>
@@ -256,6 +302,19 @@ IO
  </summary>
  <param name="oBitacora"></param>
  <remarks></remarks>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBitacora.registrarLogSystem(System.String,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="errorTabla"></param>
+ <param name="errorColumna"></param>
+</member>
+<member name="M:IO.SIS.ESCRITURA.IOBitacora.leerLogSystem">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
 </member>
 </members>
 </doc>

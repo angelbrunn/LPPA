@@ -21,6 +21,9 @@
     <p>Administracion de Usuarios - ABM Perfiles - <asp:LinkButton ID="LinkGestionPerfiles" runat="server" OnClick="LinkGestionPerfiles_Click">Gestion Perfiles</asp:LinkButton></p>
     <p>Ir a la WebSite MotoPoint! - <asp:LinkButton ID="LinkHome" runat="server" OnClick="LinkHome_Click">Ir a MotoPoint!</asp:LinkButton></p>
     </div>
+    <div id="abmContingencia">
+    Se han producidos errores criticos - <asp:LinkButton ID="linkContingencia" runat="server" OnClick="linkContingencia_Click">Ver contingencia!</asp:LinkButton>
+    </div>
     <br />
     <div>
     <asp:Table ID="tbBitacora" runat="server" Height="102px" Width="100%">
@@ -62,6 +65,7 @@
 </html>
 <script>
     var dbEstadoSession = '<%= Session["dbEstado"].ToString() %>';
+    var dbEstadoContingencia = '<%= Session["dbContingencia"].ToString() %>';
     var dbEstadoExportacion = '<%= Session["fExportar"].ToString() %>';
     var dbEstadoImportacion = '<%= Session["fImportar"].ToString() %>';
 
@@ -74,5 +78,12 @@
     }
     if (dbEstadoImportacion == 1) {
         alert("La importacion se realizo de forma correcta!");
+    }
+    if (dbEstadoContingencia == 1){
+        document.getElementById("abmContingencia").style.margin = '-5px 0px';
+        document.getElementById("abmContingencia").style.textAlign = 'left';
+        document.getElementById("abmContingencia").style.fontFamily = 'arial, sans-serif';
+    } else {
+        document.getElementById("abmContingencia").style.display = 'none';
     }
 </script>

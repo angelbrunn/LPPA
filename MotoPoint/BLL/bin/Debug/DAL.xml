@@ -103,6 +103,19 @@ DAL
  <param name="listaUsuarios"></param>
  <remarks></remarks>
 </member>
+<member name="M:DAL.SIS.DATOS.DALBitacora.obtenerTablaBitacora">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DAL.SIS.DATOS.DALBitacora.actualizarDigitoVerificadorBitacora(BE.SIS.ENTIDAD.Bitacora)">
+ <summary>
+ 
+ </summary>
+ <param name="oBitacora"></param>
+</member>
 <member name="T:DAL.SIS.DATOS.DALGrupo">
  <summary>
  

@@ -38,20 +38,27 @@ namespace MotoPoint
                 Response.Redirect("home.aspx");
             }
             else {
-                // ARQ.BASE - DIGITO VERIFICADO
-                bool resultadoConsistencia = false;
+                // ARQ.BASE - DIGITO VERIFICADO - TABLA:USUARIOS
+                bool resultadoConsistenciaUsuarios = false;
+                // ARQ.BASE - DIGITO VERIFICADO - TABLA:USUARIOS
+                bool resultadoConsistenciaBitacora = false;
 
-                // 1 - VERIFICO CONSISTENCIA DE LA BASE DE DATOS POR MEDIO DEL DIGITO VERIFICADOR | FALSE:ERROR / TRUE:ISOK
-                resultadoConsistencia = interfazNegocioUsuario.verificarConsistenciaBD();
-                if (resultadoConsistencia == false)
+                // 1 - VERIFICO CONSISTENCIA DE LA BASE DE DATOS POR MEDIO DEL DIGITO VERIFICADOR - TABLA USUARIOS| FALSE:ERROR / TRUE:ISOK
+                resultadoConsistenciaUsuarios = interfazNegocioUsuario.verificarConsistenciaUsuarioBD();
+                // 1 - VERIFICO CONSISTENCIA DE LA BASE DE DATOS POR MEDIO DEL DIGITO VERIFICADOR - TABLA USUARIOS| FALSE:ERROR / TRUE:ISOK
+                resultadoConsistenciaBitacora = interfazNegocioBitacora.verificarConsistenciaBD();
+
+                if (resultadoConsistenciaUsuarios == false || resultadoConsistenciaBitacora == false)
                 {
                     // MENSAJE ERROR CRITICO | BANNER ROJO
                     Session["dbEstado"] = 1;
+                    Session["dbContingencia"] = 1;
                 }
                 else
                 {
                     //MENSAJE OK | BANNER VERDE
                     Session["dbEstado"] = 0;
+                    Session["dbContingencia"] = 0;
                 }
                 // ARQ.BASE - GESTION DE BACKUP
                 var TxBackUp = Session["TxBackup"];
@@ -113,12 +120,14 @@ namespace MotoPoint
                 CellDescripcion.Text = _bitacora.descripcion;
                 CellFecha.Text = _bitacora.fecha.ToString();
 
+                if (CellIdEvento.Text != "1") {
                 row.Cells.Add(CellIdEvento);
                 row.Cells.Add(CellIdUsuario);
                 row.Cells.Add(CellDescripcion);
                 row.Cells.Add(CellFecha);
 
                 tbBitacora.Rows.Add(row);
+                }
 
             }
         }
@@ -139,6 +148,15 @@ namespace MotoPoint
         protected void LinkGestionPerfiles_Click(object sender, EventArgs e)
         {
             Response.Redirect("adminGestionPerfiles.aspx");
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void linkContingencia_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("adminContingencia.aspx");
         }
         /// <summary>
         /// 
@@ -346,13 +364,16 @@ namespace MotoPoint
             var exc_UI = new EL.SIS.EXCEPCIONES.UIExcepcion(oBitacora_UI.descripcion);
             //##### EJECUTO TRAZA VIA BLL SEGUN TIPO DE EXCP QUE CORRESPONDA #####
             interfazNegocioBitacora.registrarEnBitacora_BKP(usuarioIdSession, exc_BKP);
+
+            /*
             interfazNegocioBitacora.registrarEnBitacora_BLL(usuarioIdSession, exc_BLL);
             interfazNegocioBitacora.registrarEnBitacora_DAL(usuarioIdSession, exc_DAL);
             interfazNegocioBitacora.registrarEnBitacora_IO(usuarioIdSession, exc_IO);
             interfazNegocioBitacora.registrarEnBitacora_SEG(usuarioIdSession, exc_SEG);
             interfazNegocioBitacora.registrarEnBitacora_UI(usuarioIdSession, exc_UI);
-
+            */
             Response.Redirect("admin.aspx");
         }
+
     }
 }

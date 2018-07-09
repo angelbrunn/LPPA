@@ -86,6 +86,6 @@ Namespace SIS.BUSINESS
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Function verificarConsistenciaBD() As Boolean
+        Function verificarConsistenciaUsuarioBD() As Boolean
     End Interface
 End Namespace

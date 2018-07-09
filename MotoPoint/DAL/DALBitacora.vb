@@ -58,6 +58,7 @@ Namespace SIS.DATOS
                 dr("idUsuario") = oBitacora.idUsuario
                 dr("descripcion") = oBitacora.descripcion
                 dr("fecha") = oBitacora.fecha
+                dr("digitoVerificador") = oBitacora.digitoVerificador
                 ds.Tables("Bitacora").Rows.Add(dr)
 
                 adaptador.Update(ds, "Bitacora")
@@ -89,10 +90,11 @@ Namespace SIS.DATOS
                 Dim enu As IEnumerator(Of DataRow) = ds.Tables("Bitacora").Rows.GetEnumerator
                 While enu.MoveNext
                     Dim oBitacora As New BE.SIS.ENTIDAD.Bitacora
-                    oBitacora.idEvento = CType(enu.Current.Item(0), Integer)
-                    oBitacora.idUsuario = CType(enu.Current.Item(1), Integer)
+                    oBitacora.idEvento = enu.Current.Item(0).ToString
+                    oBitacora.idUsuario = enu.Current.Item(1).ToString
                     oBitacora.descripcion = enu.Current.Item(2).ToString
-                    oBitacora.fecha = CType(enu.Current.Item(3), Date)
+                    oBitacora.fecha = enu.Current.Item(3).ToString
+                    oBitacora.digitoVerificador = enu.Current.Item(4).ToString
                     listado.Add(oBitacora)
                 End While
 
@@ -141,9 +143,10 @@ Namespace SIS.DATOS
                 While enu.MoveNext
                     Dim dr As DataRow = ds.Tables("Bitacora").NewRow
                     dr("idEvento") = CType(enu.Current.idEvento, Integer)
-                    dr("idUsuario") = CType(enu.Current.idUsuario, Integer)
-                    dr("descripcion") = enu.Current.descripcion
-                    dr("fecha") = CType(enu.Current.fecha, Date)
+                    dr("idUsuario") = CType(enu.Current.idUsuario, String)
+                    dr("descripcion") = CType(enu.Current.descripcion, String)
+                    dr("fecha") = CType(enu.Current.fecha, String)
+                    dr("digitoVerificador") = CType(enu.Current.digitoVerificador, String)
                     ds.Tables("Bitacora").Rows.Add(dr)
                 End While
                 adaptador.Update(ds, "Bitacora")
@@ -422,6 +425,69 @@ Namespace SIS.DATOS
                 End While
                 adaptador.Update(ds, "Usuario")
             Catch ex As SqlException
+                Throw New EL.SIS.EXCEPCIONES.DALExcepcion(ex.Message)
+            End Try
+        End Sub
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Function obtenerTablaBitacora() As List(Of BE.SIS.ENTIDAD.Bitacora)
+            Dim listadoBitacora As New List(Of BE.SIS.ENTIDAD.Bitacora)
+
+            Dim conexString As String = System.Configuration.ConfigurationManager.ConnectionStrings("MotoPoint").ConnectionString
+            Dim sqlQuery As String = "SELECT * FROM tbl_Bitacora"
+
+            Dim conex As New SqlConnection
+            conex.ConnectionString = conexString
+
+            Dim comando As SqlCommand = conex.CreateCommand
+            comando.CommandType = CommandType.Text
+            comando.CommandText = sqlQuery
+
+            Dim adapter As New SqlDataAdapter(comando)
+            Dim ds As New DataSet
+
+            Try
+                adapter.Fill(ds, "Bitacora")
+                Dim enu As IEnumerator(Of DataRow) = ds.Tables("Bitacora").Rows.GetEnumerator
+
+                While enu.MoveNext
+                    Dim oBitacora As New BE.SIS.ENTIDAD.Bitacora
+                    oBitacora.idEvento = CType(enu.Current("idEvento"), Integer)
+                    oBitacora.idUsuario = CType(enu.Current("idUsuario"), String)
+                    oBitacora.descripcion = CType(enu.Current("descripcion"), String)
+                    oBitacora.fecha = CType(enu.Current("fecha"), String)
+                    oBitacora.digitoVerificador = CType(enu.Current("digitoVerificador"), String)
+
+                    listadoBitacora.Add(oBitacora)
+                End While
+            Catch ex As Exception
+                Throw New EL.SIS.EXCEPCIONES.DALExcepcion("Error en BD", ex)
+            End Try
+            Return listadoBitacora
+        End Function
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <param name="oBitacora"></param>
+        Public Sub actualizarDigitoVerificadorBitacora(ByVal oBitacora As BE.SIS.ENTIDAD.Bitacora)
+            Dim conexString As String = System.Configuration.ConfigurationManager.ConnectionStrings("MotoPoint").ConnectionString
+            Dim connection As New SqlConnection(conexString)
+
+            connection.Open()
+            Dim command As New SqlCommand("UPDATE tbl_Bitacora SET idUsuario = @idUsuario, descripcion = @descripcion, fecha = @fecha, digitoVerificador = @digitoVerificador WHERE idEvento = @idEvento", connection)
+            command.Parameters.AddWithValue("@idEvento", oBitacora.idEvento)
+            command.Parameters.AddWithValue("@idUsuario", oBitacora.idUsuario)
+            command.Parameters.AddWithValue("@descripcion", oBitacora.descripcion)
+            command.Parameters.AddWithValue("@fecha", oBitacora.fecha)
+            command.Parameters.AddWithValue("@digitoVerificador", oBitacora.digitoVerificador)
+            Try
+                command.ExecuteNonQuery()
+                connection.Close()
+            Catch ex As SqlException
+                connection.Close()
                 Throw New EL.SIS.EXCEPCIONES.DALExcepcion(ex.Message)
             End Try
         End Sub

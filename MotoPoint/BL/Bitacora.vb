@@ -12,6 +12,15 @@ Namespace SIS.BIT
         ''' <summary>
         ''' 
         ''' </summary>
+        ''' <remarks></remarks>
+        Dim interfazHash As IO.SIS.IO.IHash = New IO.SIS.IO.Hash
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        Dim interfazIOBitacora As IO.SIS.ESCRITURA.IOBitacora = New IO.SIS.ESCRITURA.IOBitacora
+        ''' <summary>
+        ''' 
+        ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
         Private Function obtenerUltimoId() As Integer
@@ -47,8 +56,15 @@ Namespace SIS.BIT
                 ' llamo a la insercion en el archivo local dentro de IOBitacora.
                 Dim oDalBitacora As New DAL.SIS.DATOS.DALBitacora
 
+                '#1 - AL REGISTRO LE TENGO QUE CALCULAR DIGITO VERIFICADOR HORIZONTAL
+                oBitacora.digitoVerificador = interfazHash.obtenerHashBitacora(oBitacora)
 
+                '#2 - INSERTO EL REGISTRO EN LA TABLA DE BITACORA
                 oDalBitacora.registrarEnBitacoraBD(oBitacora)
+
+                '#3 - RE CALCULO DIGITO VERIFICADOR
+                interfazHash.calcularHashTablaBitacora()
+
             Catch ex As Exception
                 Dim oIOBitacora As New IO.SIS.ESCRITURA.IOBitacora
                 oIOBitacora.registrarEnBitacoraIO(oBitacora)
@@ -77,7 +93,16 @@ Namespace SIS.BIT
                 ' si hay una excepcion cualquier que no me permite ingresar el resgistro
                 ' llamo a la insercion en el archivo local dentro de IOBitacora.
                 Dim oDalBitacora As New DAL.SIS.DATOS.DALBitacora
+
+                '#1 - AL REGISTRO LE TENGO QUE CALCULAR DIGITO VERIFICADOR HORIZONTAL
+                oBitacora.digitoVerificador = interfazHash.obtenerHashBitacora(oBitacora)
+
+                '#2 - INSERTO EL REGISTRO EN LA TABLA DE BITACORA
                 oDalBitacora.registrarEnBitacoraBD(oBitacora)
+
+                '#3 - RE CALCULO DIGITO VERIFICADOR
+                interfazHash.calcularHashTablaBitacora()
+
             Catch ex As Exception
                 Dim oIOBitacora As New IO.SIS.ESCRITURA.IOBitacora
                 oIOBitacora.registrarEnBitacoraIO(oBitacora)
@@ -105,7 +130,16 @@ Namespace SIS.BIT
                 ' si hay una excepcion cualquier que no me permite ingresar el resgistro
                 ' llamo a la insercion en el archivo local dentro de IOBitacora.
                 Dim oDalBitacora As New DAL.SIS.DATOS.DALBitacora
+
+                '#1 - AL REGISTRO LE TENGO QUE CALCULAR DIGITO VERIFICADOR HORIZONTAL
+                oBitacora.digitoVerificador = interfazHash.obtenerHashBitacora(oBitacora)
+
+                '#2 - INSERTO EL REGISTRO EN LA TABLA DE BITACORA
                 oDalBitacora.registrarEnBitacoraBD(oBitacora)
+
+                '#3 - RE CALCULO DIGITO VERIFICADOR
+                interfazHash.calcularHashTablaBitacora()
+
             Catch ex As Exception
                 Dim oIOBitacora As New IO.SIS.ESCRITURA.IOBitacora
                 oIOBitacora.registrarEnBitacoraIO(oBitacora)
@@ -133,7 +167,16 @@ Namespace SIS.BIT
                 ' si hay una excepcion cualquier que no me permite ingresar el resgistro
                 ' llamo a la insercion en el archivo local dentro de IOBitacora.
                 Dim oDalBitacora As New DAL.SIS.DATOS.DALBitacora
+
+                '#1 - AL REGISTRO LE TENGO QUE CALCULAR DIGITO VERIFICADOR HORIZONTAL
+                oBitacora.digitoVerificador = interfazHash.obtenerHashBitacora(oBitacora)
+
+                '#2 - INSERTO EL REGISTRO EN LA TABLA DE BITACORA
                 oDalBitacora.registrarEnBitacoraBD(oBitacora)
+
+                '#3 - RE CALCULO DIGITO VERIFICADOR
+                interfazHash.calcularHashTablaBitacora()
+
             Catch ex As Exception
                 Dim oIOBitacora As New IO.SIS.ESCRITURA.IOBitacora
                 oIOBitacora.registrarEnBitacoraIO(oBitacora)
@@ -161,7 +204,16 @@ Namespace SIS.BIT
                 ' si hay una excepcion cualquier que no me permite ingresar el resgistro
                 ' llamo a la insercion en el archivo local dentro de IOBitacora.
                 Dim oDalBitacora As New DAL.SIS.DATOS.DALBitacora
+
+                '#1 - AL REGISTRO LE TENGO QUE CALCULAR DIGITO VERIFICADOR HORIZONTAL
+                oBitacora.digitoVerificador = interfazHash.obtenerHashBitacora(oBitacora)
+
+                '#2 - INSERTO EL REGISTRO EN LA TABLA DE BITACORA
                 oDalBitacora.registrarEnBitacoraBD(oBitacora)
+
+                '#3 - RE CALCULO DIGITO VERIFICADOR
+                interfazHash.calcularHashTablaBitacora()
+
             Catch ex As Exception
                 Dim oIOBitacora As New IO.SIS.ESCRITURA.IOBitacora
                 oIOBitacora.registrarEnBitacoraIO(oBitacora)
@@ -188,7 +240,16 @@ Namespace SIS.BIT
                 ' si hay una excepcion cualquier que no me permite ingresar el resgistro
                 ' llamo a la insercion en el archivo local dentro de IOBitacora.
                 Dim oDalBitacora As New DAL.SIS.DATOS.DALBitacora
+
+                '#1 - AL REGISTRO LE TENGO QUE CALCULAR DIGITO VERIFICADOR HORIZONTAL
+                oBitacora.digitoVerificador = interfazHash.obtenerHashBitacora(oBitacora)
+
+                '#2 - INSERTO EL REGISTRO EN LA TABLA DE BITACORA
                 oDalBitacora.registrarEnBitacoraBD(oBitacora)
+
+                '#3 - RE CALCULO DIGITO VERIFICADOR
+                interfazHash.calcularHashTablaBitacora()
+
             Catch ex As Exception
                 Dim oIOBitacora As New IO.SIS.ESCRITURA.IOBitacora
                 oIOBitacora.registrarEnBitacoraIO(oBitacora)
@@ -206,6 +267,21 @@ Namespace SIS.BIT
             listado = oDalBitacora.obtenerEventos
 
             Return listado
+        End Function
+
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Function obtenerLogSystem() As DataTable
+            Dim dt As DataTable = New DataTable()
+            Try
+                dt = interfazIOBitacora.leerLogSystem()
+            Catch ex As Exception
+
+            End Try
+            Return dt
         End Function
     End Class
 End Namespace

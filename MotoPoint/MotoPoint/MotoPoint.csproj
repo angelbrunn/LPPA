@@ -75,6 +75,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminContingencia.aspx" />
     <Content Include="admin.aspx" />
     <Content Include="adminGestionPerfiles.aspx" />
     <Content Include="Content\css\admin.css" />
@@ -87,6 +88,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminContingencia.aspx.cs">
+      <DependentUpon>adminContingencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminContingencia.aspx.designer.cs">
+      <DependentUpon>adminContingencia.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin.aspx.cs">
       <DependentUpon>admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

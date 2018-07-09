@@ -69,9 +69,10 @@ Namespace SIS.ESCRITURA
                             Dim vec() As String = linea.Split(delim)
                             Dim oBitacora As New BE.SIS.ENTIDAD.Bitacora
                             oBitacora.idEvento = CType(vec(0), Integer)
-                            oBitacora.idUsuario = CType(vec(1), Integer)
+                            oBitacora.idUsuario = CType(vec(1), String)
                             oBitacora.descripcion = CType(vec(2), String)
-                            oBitacora.fecha = CType(vec(3), Date)
+                            oBitacora.fecha = CType(vec(3), String)
+                            oBitacora.digitoVerificador = CType(vec(4), String)
                             lista.Add(oBitacora)
                         End If
                     End If
@@ -296,7 +297,7 @@ Namespace SIS.ESCRITURA
         Public Sub escribirArchivoBitacora(ByVal ruta As String, ByVal delim As String, ByVal listaEventos As List(Of BE.SIS.ENTIDAD.Bitacora))
 
             'idEvento;idUsuario;descripcion;fecha
-            Dim cabecera As String = "idEvento;idUsuario;descripcion;fecha"
+            Dim cabecera As String = "idEvento;idUsuario;descripcion;fecha;digitoVerificador"
 
             Dim sw As New StreamWriter(ruta)
             sw.WriteLine(cabecera)
@@ -305,7 +306,7 @@ Namespace SIS.ESCRITURA
             Dim enumC As IEnumerator(Of BE.SIS.ENTIDAD.Bitacora) = listaEventos.GetEnumerator()
             While (enumC.MoveNext())
                 linea = enumC.Current.idEvento.ToString() + delim + enumC.Current.idUsuario.ToString _
-                + delim + enumC.Current.descripcion.ToString + delim + enumC.Current.fecha.ToString
+                + delim + enumC.Current.descripcion.ToString + delim + enumC.Current.fecha.ToString + delim + enumC.Current.digitoVerificador.ToString
 
                 sw.WriteLine(linea)
             End While

@@ -33,7 +33,7 @@ Namespace SIS.BUSINESS
             End Try
         End Sub
         ''' <summary>
-        ''' 
+        ''' exportarAArchivoBitacora
         ''' </summary>
         ''' <param name="ruta"></param>
         ''' <param name="delim"></param>

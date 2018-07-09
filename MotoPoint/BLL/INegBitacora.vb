@@ -54,5 +54,17 @@ Namespace SIS.BUSINESS
         ''' <returns></returns>
         ''' <remarks></remarks>
         Function obtenerEventosBitacora() As List(Of BE.SIS.ENTIDAD.Bitacora)
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Function verificarConsistenciaBD() As Boolean
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Function obtenerLogSystem() As DataTable
     End Interface
 End Namespace

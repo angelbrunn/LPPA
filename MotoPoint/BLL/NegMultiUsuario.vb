@@ -302,11 +302,11 @@ Namespace SIS.BUSINESS
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Function verificarConsistenciaBD() As Boolean Implements INegMultiUsuario.verificarConsistenciaBD
+        Function verificarConsistenciaUsuarioBD() As Boolean Implements INegMultiUsuario.verificarConsistenciaUsuarioBD
             Dim estado As Boolean
             Dim IdDB As String = "DB"
             Try
-                estado = interfazHash.verificarConsistenciaBD()
+                estado = interfazHash.verificarConsistenciaUsuarioBD()
             Catch ex As EL.SIS.EXCEPCIONES.SEGExcepcion
                 interfazNegocioBitacora.registrarEnBitacora_SEG(IdDB, ex)
             End Try

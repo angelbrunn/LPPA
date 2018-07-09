@@ -82,6 +82,12 @@ BE
  <returns></returns>
  <remarks></remarks>
 </member>
+<member name="F:BE.SIS.ENTIDAD.Bitacora.digitoVerificadorField">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
 <member name="T:BE.SIS.ENTIDAD.Grupo">
  <summary>
  

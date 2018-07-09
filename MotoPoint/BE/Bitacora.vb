@@ -33,12 +33,12 @@
         ''' 
         ''' </summary>
         ''' <remarks></remarks>
-        Private idUsuarioField As Integer
-        Public Property idUsuario() As Integer
+        Private idUsuarioField As String
+        Public Property idUsuario() As String
             Get
                 Return idUsuarioField
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As String)
                 idUsuarioField = value
             End Set
         End Property
@@ -46,18 +46,18 @@
         ''' 
         ''' </summary>
         ''' <remarks></remarks>
-        Private fechaField As Date
+        Private fechaField As String
         ''' <summary>
         ''' 
         ''' </summary>
         ''' <value></value>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Public Property fecha() As Date
+        Public Property fecha() As String
             Get
                 Return fechaField
             End Get
-            Set(ByVal value As Date)
+            Set(ByVal value As String)
                 fechaField = value
             End Set
         End Property
@@ -78,6 +78,19 @@
             End Get
             Set(ByVal value As String)
                 descripcionField = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <remarks></remarks>
+        Private digitoVerificadorField As String
+        Public Property digitoVerificador() As String
+            Get
+                Return digitoVerificadorField
+            End Get
+            Set(ByVal value As String)
+                digitoVerificadorField = value
             End Set
         End Property
     End Class

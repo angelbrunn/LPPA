@@ -249,6 +249,20 @@ BLL
  <returns></returns>
  <remarks></remarks>
 </member>
+<member name="M:BLL.SIS.BUSINESS.INegBitacora.verificarConsistenciaBD">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BLL.SIS.BUSINESS.INegBitacora.obtenerLogSystem">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
 <member name="M:BLL.SIS.BUSINESS.INegMultiIdioma.obtenerTablaMultiIdioma(System.String)">
  <summary>
  
@@ -355,7 +369,7 @@ BLL
  <returns></returns>
  <remarks></remarks>
 </member>
-<member name="M:BLL.SIS.BUSINESS.INegMultiUsuario.verificarConsistenciaBD">
+<member name="M:BLL.SIS.BUSINESS.INegMultiUsuario.verificarConsistenciaUsuarioBD">
  <summary>
  
  </summary>
@@ -384,7 +398,7 @@ BLL
 </member>
 <member name="M:BLL.SIS.BUSINESS.NegBackup.exportarAArchivoBitacora(System.String,System.String)">
  <summary>
- 
+ exportarAArchivoBitacora
  </summary>
  <param name="ruta"></param>
  <param name="delim"></param>
@@ -541,6 +555,18 @@ BLL
  </summary>
  <remarks></remarks>
 </member>
+<member name="F:BLL.SIS.BUSINESS.NegBitacora.interfazHash">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:BLL.SIS.BUSINESS.NegBitacora.interfazIOBitacora">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
 <member name="M:BLL.SIS.BUSINESS.NegBitacora.registrarEnBitacora_BKP(System.String,EL.SIS.EXCEPCIONES.BKPException)">
  <summary>
  
@@ -594,6 +620,19 @@ BLL
  </summary>
  <returns></returns>
  <remarks></remarks>
+</member>
+<member name="M:BLL.SIS.BUSINESS.NegBitacora.verificarConsistenciaBD">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:BLL.SIS.BUSINESS.NegBitacora.obtenerLogSystem">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
 </member>
 <member name="T:BLL.SIS.BUSINESS.NegMultiIdioma">
  <summary>
@@ -739,7 +778,7 @@ BLL
  <returns></returns>
  <remarks></remarks>
 </member>
-<member name="M:BLL.SIS.BUSINESS.NegMultiUsuario.verificarConsistenciaBD">
+<member name="M:BLL.SIS.BUSINESS.NegMultiUsuario.verificarConsistenciaUsuarioBD">
  <summary>
  
  </summary>

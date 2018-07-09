@@ -15,6 +15,10 @@ Namespace SIS.IO
         ''' <summary>
         ''' 
         ''' </summary>
+        Dim interfazIOBitacora As ESCRITURA.IOBitacora = New ESCRITURA.IOBitacora
+        ''' <summary>
+        ''' 
+        ''' </summary>
         ''' <param name="sCadena"></param>
         ''' <returns></returns>
         ''' <remarks></remarks>
@@ -67,7 +71,7 @@ Namespace SIS.IO
         ''' </summary>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Function verificarConsistenciaBD() As Boolean Implements IHash.verificarConsistenciaBD
+        Function verificarConsistenciaUsuarioBD() As Boolean Implements IHash.verificarConsistenciaUsuarioBD
             Dim resultadoVerificacion As Boolean
             Dim resultado As Integer
             Dim cadena As String
@@ -136,24 +140,28 @@ Namespace SIS.IO
             resultado = columnaUsuarioHasheada.CompareTo(columDigiUsuario)
             If resultado = 1 Then
                 contadorErroneo = contadorErroneo + 1
+                interfazIOBitacora.registrarLogSystem("TBL_USUARIO", "COL_USUARIOS")
             End If
 
             columnaPasswordHasheada = Me.obtenerHash(columnaPassword)
             resultado = columnaPasswordHasheada.CompareTo(columDigiPassword)
             If resultado = 1 Then
                 contadorErroneo = contadorErroneo + 1
+                interfazIOBitacora.registrarLogSystem("TBL_USUARIO", "COL_PASSWORD")
             End If
 
             columnaLegajoHasheada = Me.obtenerHash(columnaLegajo)
             resultado = columnaLegajoHasheada.CompareTo(columDigiLegajo)
             If resultado = 1 Then
                 contadorErroneo = contadorErroneo + 1
+                interfazIOBitacora.registrarLogSystem("TBL_USUARIO", "COL_LEGAJO")
             End If
 
             columnaIdiomaHasheada = Me.obtenerHash(columnaIdioma)
             resultado = columnaIdiomaHasheada.CompareTo(columDigiIdioma)
             If resultado = 1 Then
                 contadorErroneo = contadorErroneo + 1
+                interfazIOBitacora.registrarLogSystem("TBL_USUARIO", "COL_IDIOMA")
             End If
 
             '###### EVALUACION FINAL ######
@@ -169,6 +177,121 @@ Namespace SIS.IO
             End If
 
             Return resultadoVerificacion
+        End Function
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Function verificarConsistenciaBitacoraBD() As Boolean Implements IHash.verificarConsistenciaBitacoraBD
+            Dim resultadoVerificacion As Boolean
+            Dim resultado As Integer
+            Dim cadena As String
+            Dim cadenaHasheada As String
+            Dim hashVerificador As String
+            Dim contadorErroneo As Integer = 0
+            Dim listaBitacora As New List(Of BE.SIS.ENTIDAD.Bitacora)
+
+            Dim oDalBitacora As New DAL.SIS.DATOS.DALBitacora
+
+            Try
+                listaBitacora = oDalBitacora.obtenerTablaBitacora
+            Catch ex As EL.SIS.EXCEPCIONES.DALExcepcion
+                Throw New EL.SIS.EXCEPCIONES.BLLExcepcion(ex.Message)
+            End Try
+            '#################### DIGITO VERIFICADOR HORIZONTAL ####################
+            Dim enu As IEnumerator(Of BE.SIS.ENTIDAD.Bitacora) = listaBitacora.GetEnumerator
+            While enu.MoveNext
+                cadena = ""
+                cadenaHasheada = ""
+                cadena = enu.Current.idEvento.ToString + enu.Current.idUsuario + enu.Current.descripcion + enu.Current.fecha
+                cadenaHasheada = Me.obtenerHash(cadena)
+                hashVerificador = enu.Current.digitoVerificador
+
+                resultado = cadenaHasheada.CompareTo(hashVerificador)
+                If resultado = -1 Then
+                    contadorErroneo = contadorErroneo + 1
+                End If
+            End While
+
+            '#################### DIGITO VERIFICADOR VERTICAL ####################
+            Dim bandera As Integer = 1
+
+            Dim columnaIdUsuario As String = ""
+            Dim columnaDescripcion As String = ""
+            Dim columnaFecha As String = ""
+
+            Dim columnaIdUsuarioHasheada As String = ""
+            Dim columnaDescripciondHasheada As String = ""
+            Dim columnaFechaHasheada As String = ""
+
+            Dim columDigiIdUsuario As String = ""
+            Dim columDigiDescripcion As String = ""
+            Dim columDigiFecha As String = ""
+
+            Dim enuVert As IEnumerator(Of BE.SIS.ENTIDAD.Bitacora) = listaBitacora.GetEnumerator
+            While enuVert.MoveNext
+                If bandera = 1 Then
+                    columDigiIdUsuario = enuVert.Current.idUsuario
+                    columDigiDescripcion = enuVert.Current.descripcion
+                    columDigiFecha = enuVert.Current.fecha
+                    bandera = 2
+                Else
+                    columnaIdUsuario = columnaIdUsuario + enuVert.Current.idUsuario
+                    columnaDescripcion = columnaDescripcion + enuVert.Current.descripcion
+                    columnaFecha = columnaFecha + enuVert.Current.fecha
+                End If
+            End While
+
+            columnaIdUsuarioHasheada = Me.obtenerHash(columnaIdUsuario)
+            resultado = columnaIdUsuarioHasheada.CompareTo(columDigiIdUsuario)
+            If resultado = 1 Then
+                contadorErroneo = contadorErroneo + 1
+                interfazIOBitacora.registrarLogSystem("TBL_BITACORA", "COL_USUARIOS")
+            End If
+
+            columnaDescripciondHasheada = Me.obtenerHash(columnaDescripcion)
+            resultado = columnaDescripciondHasheada.CompareTo(columDigiDescripcion)
+            If resultado = 1 Then
+                contadorErroneo = contadorErroneo + 1
+                interfazIOBitacora.registrarLogSystem("TBL_BITACORA", "COL_DESCRIPCION")
+            End If
+
+            columnaFechaHasheada = Me.obtenerHash(columnaFechaHasheada)
+            resultado = columnaFechaHasheada.CompareTo(columDigiFecha)
+            If resultado = 1 Then
+                contadorErroneo = contadorErroneo + 1
+                interfazIOBitacora.registrarLogSystem("TBL_BITACORA", "COL_FECHA")
+            End If
+
+            '###### EVALUACION FINAL ######
+            'Evaluación final para saber si hubo algun error de comprobación
+            'en los digitos verificadores tanto verticales como horizontales.
+
+            If contadorErroneo = 0 Then
+                resultadoVerificacion = True
+            Else
+                resultadoVerificacion = False
+                'FIXME
+                'Throw New EL.SIS.EXCEPCIONES.BLLExcepcion("Inconsistencia en Base de Datos - Digito Verificador Invalido")
+            End If
+
+            Return resultadoVerificacion
+        End Function
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <param name="oUsuario"></param>
+        ''' <returns></returns>
+        Function obtenerHashBitacora(ByVal oBitacora As BE.SIS.ENTIDAD.Bitacora) As String Implements IHash.obtenerHashBitacora
+            Dim digiVerif As String = "ERROR"
+
+            Dim cadena As String
+            cadena = oBitacora.idEvento.ToString + oBitacora.idUsuario + oBitacora.descripcion + oBitacora.fecha
+
+            digiVerif = Me.obtenerHash(cadena)
+
+            Return digiVerif
         End Function
         ''' <summary>
         ''' 
@@ -231,6 +354,74 @@ Namespace SIS.IO
                 enu.Current.digitoVerificador = cadenaHasheada
             End While
             Return listaUsuarioHash
+        End Function
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <returns></returns>
+        Function calcularHashTablaBitacora() Implements IHash.calcularHashTablaBitacora
+            Dim oUpdateBitacora As New BE.SIS.ENTIDAD.Bitacora
+            Dim oDalBitacora As New DAL.SIS.DATOS.DALBitacora
+            Dim listaBitacora As New List(Of BE.SIS.ENTIDAD.Bitacora)
+
+            Try
+                listaBitacora = oDalBitacora.obtenerTablaBitacora
+            Catch ex As EL.SIS.EXCEPCIONES.DALExcepcion
+                Throw New EL.SIS.EXCEPCIONES.BLLExcepcion(ex.Message)
+            End Try
+
+            '#################### DIGITO VERIFICADOR VERTICAL ####################
+            Dim bandera As Integer = 1
+
+            Dim columnaIdUsuario As String = ""
+            Dim columnaDescripcion As String = ""
+            Dim columnaFecha As String = ""
+            Dim columnaDigitoVerficador As String = ""
+
+            Dim columnaIdUsuarioHasheada As String = ""
+            Dim columnaDescripciondHasheada As String = ""
+            Dim columnaFechaHasheada As String = ""
+            Dim columnaDigitoVerficadorHasheada As String = ""
+
+            Dim columDigiIdUsuario As String = ""
+            Dim columDigiDescripcion As String = ""
+            Dim columDigiFecha As String = ""
+            Dim columnaDigiIdEvento As String = ""
+
+
+            Dim enuVert As IEnumerator(Of BE.SIS.ENTIDAD.Bitacora) = listaBitacora.GetEnumerator
+            While enuVert.MoveNext
+                If bandera = 1 Then
+                    columnaDigiIdEvento = enuVert.Current.idEvento.ToString
+                    columDigiIdUsuario = enuVert.Current.idUsuario
+                    columDigiDescripcion = enuVert.Current.descripcion
+                    columDigiFecha = enuVert.Current.fecha
+                    bandera = 2
+                Else
+                    columnaIdUsuario = columnaIdUsuario + enuVert.Current.idUsuario
+                    columnaDescripcion = columnaDescripcion + enuVert.Current.descripcion
+                    columnaFecha = columnaFecha + enuVert.Current.fecha
+                End If
+            End While
+
+            'ARQ.BASE - CALCULAMOS LOS NUEVOS VALORES DE DIGITOS VERIFICADORES
+            columnaIdUsuarioHasheada = Me.obtenerHash(columnaIdUsuario)
+            columnaDescripciondHasheada = Me.obtenerHash(columnaDescripcion)
+            columnaFechaHasheada = Me.obtenerHash(columnaFechaHasheada)
+
+            Dim headerVerificador = columnaDigiIdEvento + columnaIdUsuarioHasheada + columnaDescripciondHasheada + columnaFechaHasheada
+            columnaDigitoVerficadorHasheada = Me.obtenerHash(headerVerificador)
+
+
+            oUpdateBitacora.idEvento = 1
+            oUpdateBitacora.idUsuario = columnaIdUsuarioHasheada
+            oUpdateBitacora.descripcion = columnaDescripciondHasheada
+            oUpdateBitacora.fecha = columnaFechaHasheada
+            oUpdateBitacora.digitoVerificador = columnaDigitoVerficadorHasheada
+
+            'ARQ.BASE - ACTUALIZO LA TABLA DE BITACORA CON LOS DIG. VERIFICADORES
+            oDalBitacora.actualizarDigitoVerificadorBitacora(oUpdateBitacora)
+
         End Function
     End Class
 End Namespace

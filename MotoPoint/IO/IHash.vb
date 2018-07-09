@@ -33,9 +33,22 @@ Namespace SIS.IO
         ''' <summary>
         ''' 
         ''' </summary>
+        ''' <param name="oBitacora"></param>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Function verificarConsistenciaBD() As Boolean
+        Function obtenerHashBitacora(ByVal oBitacora As BE.SIS.ENTIDAD.Bitacora) As String
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Function verificarConsistenciaUsuarioBD() As Boolean
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Function verificarConsistenciaBitacoraBD() As Boolean
         ''' <summary>
         ''' 
         ''' </summary>
@@ -43,5 +56,10 @@ Namespace SIS.IO
         ''' <returns></returns>
         ''' <remarks></remarks>
         Function calcularHashTablaUsuario(ByVal listaUsuario As List(Of BE.SIS.ENTIDAD.Usuario)) As List(Of BE.SIS.ENTIDAD.Usuario)
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <returns></returns>
+        Function calcularHashTablaBitacora()
     End Interface
 End Namespace
