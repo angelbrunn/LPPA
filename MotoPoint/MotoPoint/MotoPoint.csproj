@@ -79,7 +79,7 @@
     <Content Include="webmasterContingencia.aspx" />
     <Content Include="webmaster.aspx" />
     <Content Include="webmasterGestionPerfiles.aspx" />
-    <Content Include="Content\css\admin.css" />
+    <Content Include="Content\css\webmaster.css" />
     <Content Include="Content\css\home.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="favicon.ico" />
