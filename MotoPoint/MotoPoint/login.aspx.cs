@@ -98,7 +98,7 @@ namespace MotoPoint
                 {
                     //SI USUARIO ADMIN -> PANTALLA ADMIN
                     Session["loginEstado"] = 0;
-                    Response.Redirect("admin.aspx");
+                    Response.Redirect("webmaster.aspx");
                 }
                 else
                 {

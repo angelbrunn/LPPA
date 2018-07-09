@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="admin.aspx.cs" 
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="webmaster.aspx.cs" 
     Inherits="MotoPoint.admin" %>
 
 <!DOCTYPE html>

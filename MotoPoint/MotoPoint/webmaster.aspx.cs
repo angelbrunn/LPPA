@@ -147,7 +147,7 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void LinkGestionPerfiles_Click(object sender, EventArgs e)
         {
-            Response.Redirect("adminGestionPerfiles.aspx");
+            Response.Redirect("webmasterGestionPerfiles.aspx");
         }
         /// <summary>
         /// 
@@ -156,7 +156,7 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void linkContingencia_Click(object sender, EventArgs e)
         {
-            Response.Redirect("adminContingencia.aspx");
+            Response.Redirect("webmasterContingencia.aspx");
         }
         /// <summary>
         /// 
@@ -248,7 +248,7 @@ namespace MotoPoint
                 Session["fExportar"] = 1;
             }
 
-            Response.Redirect("admin.aspx");
+            Response.Redirect("webmaster.aspx");
         }
         /// <summary>
         /// 
@@ -330,7 +330,7 @@ namespace MotoPoint
                 Session["fImportar"] = 1;
             }
 
-            Response.Redirect("admin.aspx");
+            Response.Redirect("webmaster.aspx");
         }
         /// <summary>
         /// 
@@ -372,7 +372,7 @@ namespace MotoPoint
             interfazNegocioBitacora.registrarEnBitacora_SEG(usuarioIdSession, exc_SEG);
             interfazNegocioBitacora.registrarEnBitacora_UI(usuarioIdSession, exc_UI);
             */
-            Response.Redirect("admin.aspx");
+            Response.Redirect("webmaster.aspx");
         }
 
     }

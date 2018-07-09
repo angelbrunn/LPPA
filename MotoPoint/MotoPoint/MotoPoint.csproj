@@ -75,9 +75,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="adminContingencia.aspx" />
-    <Content Include="admin.aspx" />
-    <Content Include="adminGestionPerfiles.aspx" />
+    <Content Include="eventos.aspx" />
+    <Content Include="webmasterContingencia.aspx" />
+    <Content Include="webmaster.aspx" />
+    <Content Include="webmasterGestionPerfiles.aspx" />
     <Content Include="Content\css\admin.css" />
     <Content Include="Content\css\home.css" />
     <Content Include="Content\css\login.css" />
@@ -88,26 +89,33 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adminContingencia.aspx.cs">
-      <DependentUpon>adminContingencia.aspx</DependentUpon>
+    <Compile Include="eventos.aspx.cs">
+      <DependentUpon>eventos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminContingencia.aspx.designer.cs">
-      <DependentUpon>adminContingencia.aspx</DependentUpon>
+    <Compile Include="eventos.aspx.designer.cs">
+      <DependentUpon>eventos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin.aspx.cs">
-      <DependentUpon>admin.aspx</DependentUpon>
+    <Compile Include="webmasterContingencia.aspx.cs">
+      <DependentUpon>webmasterContingencia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin.aspx.designer.cs">
-      <DependentUpon>admin.aspx</DependentUpon>
+    <Compile Include="webmasterContingencia.aspx.designer.cs">
+      <DependentUpon>webmasterContingencia.aspx</DependentUpon>
     </Compile>
-    <Compile Include="adminGestionPerfiles.aspx.cs">
-      <DependentUpon>adminGestionPerfiles.aspx</DependentUpon>
+    <Compile Include="webmaster.aspx.cs">
+      <DependentUpon>webmaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminGestionPerfiles.aspx.designer.cs">
-      <DependentUpon>adminGestionPerfiles.aspx</DependentUpon>
+    <Compile Include="webmaster.aspx.designer.cs">
+      <DependentUpon>webmaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webmasterGestionPerfiles.aspx.cs">
+      <DependentUpon>webmasterGestionPerfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webmasterGestionPerfiles.aspx.designer.cs">
+      <DependentUpon>webmasterGestionPerfiles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
